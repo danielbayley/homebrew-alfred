@@ -1,0 +1,43 @@
+_[Homebrew]_ + _[Alfred]_
+=========================
+Manage your [Alfred] [workflows]* with [Homebrew].
+
+\* Requires the paid _[Powerpack]_ upgrade.
+
+Install
+-------
+~~~ sh
+brew tap danielbayley/alfred
+brew cask install #workflow
+~~~
+
+[Contribute][guide]
+-------------------
+Follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
+
+Because Alfred preferences can be [synced], the following Ruby code is necessary to install the workflow into the correct folder:
+~~~ ruby
+plist = '~/Library/Preferences/com.*.Alfred-Preferences-3.plist'
+syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
+workflows = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/"
+
+artifact staged_path, target: workflows + name[0]
+~~~
+
+License
+-------
+[MIT] © [Daniel Bayley]
+
+[MIT]:              LICENSE.md
+[Daniel Bayley]:    https://github.com/danielbayley
+
+[alfred]:           http://alfredapp.com
+[powerpack]:        https://alfredapp.com/powerpack
+[workflows]:        http://alfredapp.com/workflows
+[synced]:           https://alfredapp.com/help/advanced/sync
+
+[homebrew]:         http://brew.sh
+[_cask_]:           http://caskroom.github.io
+
+[guide]:            https://github.com/caskroom/homebrew-cask/blob/master/doc/development/adding_a_cask.md
+[existing]:         Casks
