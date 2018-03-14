@@ -13,7 +13,7 @@ brew cask install #workflow
 
 [Contribute][guide]
 -------------------
-Follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
+`git config core.hooksPath hooks` and follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
 
 Because Alfred preferences can be [synced], the following Ruby code is necessary to install the workflow into the correct folder:
 ~~~ ruby

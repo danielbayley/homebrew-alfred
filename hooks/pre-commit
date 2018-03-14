@@ -1,0 +1,7 @@
+#! /bin/bash
+git diff --cached --name-only --diff-filter=ACM | grep .rb$ |
+while read rb
+do
+  brew cask audit $rb && #--download
+  brew cask style $rb #--fix
+done
