@@ -1,3 +1,5 @@
+[![badge][ci]][circle]
+
 _[Homebrew]_ + _[Alfred]_
 =========================
 Manage your [Alfred] [workflows]* with [Homebrew].
@@ -30,6 +32,9 @@ License
 
 [MIT]:              LICENSE.md
 [Daniel Bayley]:    https://github.com/danielbayley
+
+[ci]:               https://img.shields.io/circleci/project/danielbayley/homebrew-alfred.svg?style=flat-square
+[circle]:           https://circleci.com/gh/danielbayley/homebrew-alfred
 
 [alfred]:           http://alfredapp.com
 [powerpack]:        https://alfredapp.com/powerpack

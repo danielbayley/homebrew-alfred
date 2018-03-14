@@ -1,7 +1,15 @@
-#! /bin/bash
-git diff --cached --name-only --diff-filter=ACM | grep .rb$ |
-while read rb
+#! /bin/zsh -f
+set -e
+
+if (($#))
+then ls {Casks/,}$@:t:r.rb(N)
+elif ${CI-false}
+then ls Casks/*.rb
+else git diff --cached --name-only --diff-filter=ACM | grep .rb$
+fi | while read rb
 do
-  brew cask audit $rb && #--download
-  brew cask style $rb #--fix
+  brew cask style $rb
+  unset download
+  [[ $rb != *-cc* ]] && download=${CI+download}
+  brew cask audit $rb --$download
 done

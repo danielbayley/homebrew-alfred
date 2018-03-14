@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: '9.1.0'
+    environment:
+      - GEM_HOME: ../.gem
+      - HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - run: brew --version > Gemfile.lock
+      - restore_cache:
+          key: v1-brew-gem-cache-{{ checksum "Gemfile.lock" }}
+      - run: hooks/pre-commit
+      - save_cache:
+          key: v1-brew-gem-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ../.gem
