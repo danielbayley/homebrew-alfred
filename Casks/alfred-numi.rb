@@ -9,6 +9,7 @@ cask 'alfred-numi' do
   name 'Numi'
   homepage 'http://numi.io/blog/alfred'
 
+  depends_on cask: 'alfred'
   depends_on cask: 'numi'
 
   plist = '~/Library/Preferences/com.*.Alfred-Preferences-3.plist'

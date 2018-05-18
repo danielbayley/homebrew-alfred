@@ -7,6 +7,8 @@ cask 'alfred-snippetslab' do
   name 'SnippetsLab'
   homepage 'https://renfei.org/snippets-lab/manual/mac/tips-and-tricks/alfred-integration.html'
 
+  depends_on cask: 'alfred'
+
   plist = '~/Library/Preferences/com.*.Alfred-Preferences-3.plist'
   syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
   workflow = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/" + name[0]

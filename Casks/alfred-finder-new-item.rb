@@ -8,6 +8,7 @@ cask 'alfred-finder-new-item' do
   name 'New Item'
   homepage "https://npmjs.org/package/#{token}#readme"
 
+  depends_on cask: 'alfred'
   depends_on formula: 'node'
   container type: :naked
 
