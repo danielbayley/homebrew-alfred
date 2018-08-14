@@ -33,7 +33,7 @@ License
 [MIT]:              LICENSE.md
 [Daniel Bayley]:    https://github.com/danielbayley
 
-[ci]:               https://img.shields.io/circleci/project/danielbayley/homebrew-alfred.svg?style=flat-square
+[ci]:               https://flat.badgen.net/circleci/github/danielbayley/homebrew-alfred?label=&icon=circleci
 [circle]:           https://circleci.com/gh/danielbayley/homebrew-alfred
 
 [alfred]:           http://alfredapp.com
