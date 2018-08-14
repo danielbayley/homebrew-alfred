@@ -1,6 +1,6 @@
 cask 'alfred-numi' do
-  version '1.2'
-  sha256 '58a6e97e6905d4a22667df85407b774008a186f0b20af1915f96a5347adfd41d'
+  version '1.2.1'
+  sha256 '8d58d2718008b49a0929b9db370fdc9d194006d90b87cb2831efb15dc16628e1'
 
   # github.com/nikolaeu/Numi-extensions was verified as official when first introduced to the cask
   url "https://github.com/nikolaeu/Numi-extensions/releases/download/#{version}/Numi.alfredworkflow"
