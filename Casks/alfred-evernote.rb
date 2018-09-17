@@ -7,6 +7,9 @@ cask 'alfred-evernote' do
   name 'Evernote'
   homepage 'https://appcenter.evernote.com/app/alfred/mac'
 
+  depends_on cask: 'alfred'
+  depends_on cask: 'evernote'
+
   plist = '~/Library/Preferences/com.*.Alfred-Preferences-3.plist'
   syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
   workflow = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/Evernote"
