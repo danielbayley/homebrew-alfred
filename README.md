@@ -1,10 +1,10 @@
 [![badge][ci]][circle]
 
-_[Homebrew]_ + _[Alfred]_
-=========================
-Manage your [Alfred] [workflows]* with [Homebrew].
+_[Homebrew]_ + _[Alfred]_ <img src="logo.svg" width="8%" align="right">
+=======================================================================
+Manage [Alfred] with [Homebrew].
 
-\* Requires the paid _[Powerpack]_ upgrade.
+[Workflows] require the paid _[Powerpack]_ upgrade.
 
 Install
 -------
