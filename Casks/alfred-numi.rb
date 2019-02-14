@@ -4,8 +4,7 @@ cask 'alfred-numi' do
 
   # github.com/nikolaeu/Numi-extensions was verified as official when first introduced to the cask
   url "https://github.com/nikolaeu/Numi-extensions/releases/download/#{version}/Numi.alfredworkflow"
-  appcast 'https://github.com/nikolaeu/Numi-extensions/releases.atom',
-          checkpoint: '90ecddd1f29fec3db22ef4de0d885dd52227bacf30cdb979955c09f82365046d'
+  appcast 'https://github.com/nikolaeu/Numi-extensions/releases.atom'
   name 'Numi'
   homepage 'http://numi.io/blog/alfred'
 

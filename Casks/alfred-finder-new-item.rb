@@ -3,8 +3,7 @@ cask 'alfred-finder-new-item' do
   sha256 'a6e8491bbf65dbe257aa04f9a575d6ac5ca5b1f9c31ff9907a23286c0e0043ff'
 
   url "https://registry.npmjs.org/#{token}/-/#{token}-#{version}.tgz"
-  appcast "https://github.com/danielbayley/#{token}/releases.atom",
-          checkpoint: '7375d5a63a45d9e9ad4ac9b02c28ed7e97dd6e392ad68b83e6444146522c53c8'
+  appcast "https://github.com/danielbayley/#{token}/releases.atom"
   name 'New Item'
   homepage "https://npmjs.org/package/#{token}#readme"
 
