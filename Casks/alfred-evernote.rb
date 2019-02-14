@@ -4,6 +4,7 @@ cask 'alfred-evernote' do
 
   # dropbox.com/s/2l57ziiv3e3uivx was verified as official when first introduced to the cask
   url "https://dropbox.com/s/2l57ziiv3e3uivx/Evernote#{version}.alfredworkflow?dl=1"
+  appcast 'https://alfredforum.com/topic/840-evernote-workflow'
   name 'Evernote'
   homepage 'https://appcenter.evernote.com/app/alfred/mac'
 
