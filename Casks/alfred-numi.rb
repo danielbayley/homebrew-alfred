@@ -6,7 +6,7 @@ cask 'alfred-numi' do
   url "https://github.com/nikolaeu/Numi-extensions/releases/download/#{version}/Numi.alfredworkflow"
   appcast 'https://github.com/nikolaeu/Numi-extensions/releases.atom'
   name 'Numi'
-  homepage 'http://numi.io/blog/alfred'
+  homepage 'https://numi.io/docs/#alfred'
 
   depends_on cask: 'alfred'
   depends_on cask: 'numi'
