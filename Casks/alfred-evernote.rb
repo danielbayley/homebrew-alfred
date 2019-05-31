@@ -11,8 +11,8 @@ cask 'alfred-evernote' do
   depends_on cask: 'alfred'
   depends_on cask: 'evernote'
 
-  plist = '~/Library/Preferences/com.*.Alfred-Preferences-3.plist'
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
+  plist = Dir["#{ENV['HOME']}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
+  syncfolder = File.expand_path `/usr/bin/defaults read #{plist.first} syncfolder`
   workflow = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/Evernote"
 
   artifact staged_path, target: workflow
