@@ -1,9 +1,9 @@
 cask 'alfred-evernote' do
-  version '9b3'
-  sha256 '8783ba06f714ec26e48f5e4a881fd4569b0e65e0b944c3b06a730ad9817d8739'
+  version '9b4'
+  sha256 '1416e41bc88507f38489e03704ae093271aaa7a87af305d969fd86f62b369204'
 
-  # dropbox.com/s/2l57ziiv3e3uivx was verified as official when first introduced to the cask
-  url "https://dropbox.com/s/2l57ziiv3e3uivx/Evernote#{version}.alfredworkflow?dl=1"
+  # dropbox.com/s/p7am1212afu3a5j was verified as official when first introduced to the cask
+  url "https://dropbox.com/s/p7am1212afu3a5j/Evernote#{version}.alfredworkflow?dl=1"
   appcast 'https://alfredforum.com/topic/840-evernote-workflow'
   name 'Evernote'
   homepage 'https://appcenter.evernote.com/app/alfred/mac'
