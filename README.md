@@ -36,13 +36,14 @@ License
 [ci]:               https://flat.badgen.net/circleci/github/danielbayley/homebrew-alfred?label=&icon=circleci
 [circle]:           https://circleci.com/gh/danielbayley/homebrew-alfred
 
-[alfred]:           http://alfredapp.com
+[alfred]:           https://alfredapp.com
 [powerpack]:        https://alfredapp.com/powerpack
-[workflows]:        http://alfredapp.com/workflows
+[workflows]:        https://alfredapp.com/workflows
 [synced]:           https://alfredapp.com/help/advanced/sync
 
-[homebrew]:         http://brew.sh
-[_cask_]:           http://caskroom.github.io
+[homebrew]:         https://brew.sh
+[_cask_]:           https://caskroom.github.io
+[brewfile]:         https://github.com/Homebrew/homebrew-bundle#usage
 
 [guide]:            https://github.com/caskroom/homebrew-cask/blob/master/doc/development/adding_a_cask.md
 [existing]:         Casks
