@@ -19,11 +19,11 @@ brew cask install #workflow
 
 Because Alfred preferences can be [synced], the following Ruby code is necessary to install the workflow into the correct folder:
 ~~~ ruby
-plist = Dir["#{ENV['HOME']}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
+plist = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
 syncfolder = File.expand_path `/usr/bin/defaults read #{plist.first} syncfolder`
 workflows = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/"
 
-artifact staged_path, target: workflows + name[0]
+artifact staged_path, target: workflows + name.first
 ~~~
 
 License

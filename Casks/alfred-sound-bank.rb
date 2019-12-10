@@ -9,5 +9,5 @@ cask 'alfred-sound-bank' do
 
   depends_on cask: 'alfred'
 
-  artifact "#{name[0]}/aif", target: "#{ENV['HOME']}/Library/Sounds/#{name[0]}"
+  artifact "#{name.first}/aif", target: "#{Dir.home}/Library/Sounds/#{name.first}"
 end

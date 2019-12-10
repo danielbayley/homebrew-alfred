@@ -11,7 +11,7 @@ cask 'alfred-evernote' do
   depends_on cask: 'alfred'
   depends_on cask: 'evernote'
 
-  plist = Dir["#{ENV['HOME']}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
+  plist = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
   syncfolder = File.expand_path `/usr/bin/defaults read #{plist.first} syncfolder`
   workflow = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/Evernote"
 
