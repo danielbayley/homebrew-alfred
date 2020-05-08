@@ -1,4 +1,4 @@
 # macOS
 .DS_Store
 
-*.alfredworkflow
+*.alfred*
