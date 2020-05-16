@@ -13,6 +13,8 @@ brew tap danielbayley/alfred
 brew cask install #workflow
 ~~~
 
+**You also will need to set a folder for Syncing.** Otherwise, you see an error and your user directory will be used. Futhermore, the installed workflows and settings will not be found by Alfred. You may find the instructions on setting the Sync folder in [Alfred's docoumentation](https://www.alfredapp.com/help/advanced/sync/#first-mac).
+
 [Contribute][guide]
 -------------------
 `git config core.hooksPath hooks` and follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
