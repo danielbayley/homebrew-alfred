@@ -3,6 +3,7 @@ cask 'alfred-things' do
   sha256 '508ffea9bfb2f2ebb3e0c29b570ac9d71c5de8991aaf6bf97660e3fdff15cb98'
 
   url "https://culturedcode.com/frozen/#{version.after_comma.major}/#{version.after_comma.minor}/Add-To-Do-to-Things-#{version.major}.alfredworkflow.zip"
+  appcast 'https://culturedcode.com/things/support/articles/2803574'
   name "Add To-Do to Things #{version.major}"
   homepage 'https://support.culturedcode.com/customer/en/portal/articles/2803574-creating-to-dos-with-a-launcher'
 
