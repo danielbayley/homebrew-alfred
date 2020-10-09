@@ -1,5 +1,3 @@
-[![badge][ci]][circle]
-
 _[Homebrew]_ + _[Alfred]_ <img src="logo.svg" width="8%" align="right">
 =======================================================================
 Manage [Alfred] with [Homebrew].
@@ -15,7 +13,7 @@ brew cask install #workflow
 
 [Contribute][guide]
 -------------------
-`git config core.hooksPath hooks` and follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
+`git config core.hooksPath .github/hooks` and follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
 
 Because Alfred preferences can be [synced], the following Ruby code is necessary to install the workflow into the correct folder:
 ~~~ ruby
@@ -32,9 +30,6 @@ License
 
 [MIT]:              LICENSE.md
 [Daniel Bayley]:    https://github.com/danielbayley
-
-[ci]:               https://flat.badgen.net/circleci/github/danielbayley/homebrew-alfred?label=&icon=circleci
-[circle]:           https://circleci.com/gh/danielbayley/homebrew-alfred
 
 [alfred]:           https://alfredapp.com
 [powerpack]:        https://alfredapp.com/powerpack
