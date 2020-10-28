@@ -6,7 +6,7 @@ cask "alfred-things" do
   appcast "https://culturedcode.com/things/support/articles/2803574"
   name "Add To-Do to Things #{version.major}"
   desc "Create to-dos with Alfred"
-  homepage "https://support.culturedcode.com/customer/en/portal/articles/2803574-creating-to-dos-with-a-launcher"
+  homepage "https://culturedcode.com/things/support/articles/2803574"
 
   depends_on cask: "alfred"
 
