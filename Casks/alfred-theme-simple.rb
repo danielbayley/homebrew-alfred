@@ -10,14 +10,14 @@ cask "alfred-theme-simple" do
 
   depends_on cask: "alfred"
 
-  plist = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist.first} syncfolder`
+  plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
+  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
   themes = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes"
 
   ["Light", "Dark"].map do |shade|
     artifact "alfred-simple-master/#{name.first} #{shade}.alfredappearance",
-             target: "#{themes}/#{name.first} #{shade}/theme.json"
+             target: "#{themes}/theme.homebrew.#{token}-#{shade.downcase}/theme.json"
   end
 
-  uninstall rmdir: "#{themes}/#{name.first}*"
+  uninstall rmdir: "#{themes}/#{token}*"
 end

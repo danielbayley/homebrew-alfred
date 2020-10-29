@@ -9,9 +9,9 @@ cask "alfred-reminder-drafts" do
 
   depends_on cask: "alfred"
 
-  plist = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist.first} syncfolder`
-  workflow = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows/#{name.first}"
+  plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
+  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
+  workflows = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows"
 
-  artifact staged_path, target: workflow
+  artifact staged_path, target: "#{workflows}/homebrew.workflow.#{token}"
 end

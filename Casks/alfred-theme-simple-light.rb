@@ -10,9 +10,9 @@ cask "alfred-theme-simple-light" do
 
   depends_on cask: "alfred"
 
-  plist = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist.first} syncfolder`
-  theme = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes/#{name.first}"
+  plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
+  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
+  theme = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes/theme.homebrew.#{token}"
 
   artifact "theme.json", target: "#{theme}/theme.json"
 
