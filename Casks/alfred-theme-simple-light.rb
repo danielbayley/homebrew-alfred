@@ -1,19 +1,19 @@
 cask "alfred-theme-simple-light" do
+  extend = CaskLoader.load token.sub "light", "dark"
+
   version "V9h8Iyb9cJ"
   sha256 :no_check
 
   preview = url "https://alfredapp.com/extras/theme/#{version}"
-  appcast "https://raw.githubusercontent.com/sindresorhus/alfred-simple/master/readme.md"
+  appcast extend.appcast.uri
   name "Simple Light"
   desc "#{name.first} theme for Alfred"
   homepage preview.to_s
 
-  depends_on cask: "alfred"
+  depends_on extend.depends_on
 
-  plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
-  theme = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes/theme.homebrew.#{token}"
-
+  require_relative "../cmd/brew-alfred"
+  theme = "#{HOMEBREW_ALFRED_THEME_PREFIX}.#{token}"
   artifact "theme.json", target: "#{theme}/theme.json"
 
   preflight do

@@ -8,15 +8,15 @@ Install
 -------
 ~~~ sh
 brew tap danielbayley/alfred
-brew cask install #alfred-workflow #alfred-theme
+brew alfred install #workflow #theme
 ~~~
 or with [`brew bundle`] using a _[Brewfile]_:
 ~~~ rb
 # Brewfile
-tap 'danielbayley/alfred'
-cask 'alfred-theme'
-# App dependency already installed with Setapp
-cask 'alfred-workflow', args: { 'skip-cask-deps': true }
+tap "danielbayley/alfred"
+cask "alfred-theme"
+# App dependency already installed independently.
+alfred "alfred-workflow", args: { "skip-cask-deps": true }
 ~~~
 
 [Contribute][guide]
@@ -25,16 +25,12 @@ cask 'alfred-workflow', args: { 'skip-cask-deps': true }
 
 Because Alfred preferences can be [synced], the following Ruby code is necessary to install the workflow into the correct folder:
 ~~~ ruby
-plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
-workflows = "#{syncfolder.chomp}/Alfred.alfredpreferences/workflows"
-
-artifact staged_path, target: "#{workflows}/homebrew.workflow.#{token}"
+require_relative "../cmd/brew-alfred"
+artifact staged_path, target: "#{HOMEBREW_ALFRED_WORKFLOW_PREFIX}.#{token}"
 ~~~
 or with slightly different code for [themes]:
 ~~~ ruby
-theme = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes/theme.homebrew.#{token}"
-
+theme = "#{HOMEBREW_ALFRED_THEME_PREFIX}.#{token}"
 artifact "theme.json", target: "#{theme}/theme.json"
 
 uninstall rmdir: theme

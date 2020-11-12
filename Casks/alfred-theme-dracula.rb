@@ -11,10 +11,8 @@ cask "alfred-theme-dracula" do
 
   depends_on cask: "alfred"
 
-  plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
-  theme = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes/theme.homebrew.#{token}"
-
+  require_relative "../cmd/brew-alfred"
+  theme = "#{HOMEBREW_ALFRED_THEME_PREFIX}.#{token}"
   artifact "alfred-master/#{name.first}.alfredappearance", target: "#{theme}/theme.json"
 
   uninstall rmdir: theme

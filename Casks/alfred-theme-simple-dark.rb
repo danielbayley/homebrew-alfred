@@ -10,11 +10,9 @@ cask "alfred-theme-simple-dark" do
 
   depends_on cask: "alfred"
 
-  plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
-  syncfolder = File.expand_path `/usr/bin/defaults read #{plist} syncfolder`
-  theme = "#{syncfolder.chomp}/Alfred.alfredpreferences/themes/theme.homebrew.#{token}"
-
-  artifact "alfred-master/#{name.first}.alfredappearance", target: "#{theme}/theme.json"
+  require_relative "../cmd/brew-alfred"
+  theme = "#{HOMEBREW_ALFRED_THEME_PREFIX}.#{token}"
+  artifact "theme.json", target: "#{theme}/theme.json"
 
   preflight do
     require "nokogiri"
