@@ -14,7 +14,7 @@ HOMEBREW_ALFRED_WORKFLOW_PREFIX = "#{HOMEBREW_ALFRED_PREFERENCES}/workflows/home
 HOMEBREW_ALFRED_THEME_PREFIX    = "#{HOMEBREW_ALFRED_PREFERENCES}/themes/theme.homebrew"
 HOMEBREW_ALFRED_RESOURCES       = "#{HOMEBREW_ALFRED_PREFERENCES}/resources"
 
-return if caller.first.match? %r{#{HOMEBREW_LIBRARY}/Taps/.+require}
+return if caller.first.match? %r{#{HOMEBREW_LIBRARY}/Taps/.+require}o
 
 def prefix(arg)
   prefix = "alfred-"
