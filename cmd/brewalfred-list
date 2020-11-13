@@ -1,0 +1,2 @@
+#! /bin/zsh --no-rcs
+brew list --cask $@ | grep alfred-
