@@ -14,7 +14,7 @@ HOMEBREW_ALFRED_WORKFLOW_PREFIX = "#{HOMEBREW_ALFRED_PREFERENCES}/workflows/home
 HOMEBREW_ALFRED_THEME_PREFIX    = "#{HOMEBREW_ALFRED_PREFERENCES}/themes/theme.homebrew"
 HOMEBREW_ALFRED_RESOURCES       = "#{HOMEBREW_ALFRED_PREFERENCES}/resources"
 
-return if caller.first.include? "require"
+return if caller.first.match? %r{#{HOMEBREW_LIBRARY}/Taps/.+require}
 
 def prefix(arg)
   prefix = "alfred-"
@@ -25,14 +25,14 @@ end
 
 ARGV[0] = "list" if ARGV.first == "ls"
 
-ARGV = [ARGV.shift, *ARGV.map(&method(:prefix))].freeze
+args = ARGV.shift, *ARGV.map(&method(:prefix))
 
 taps = Tap.cmd_directories.join ","
-command, = Dir["{#{taps},#{__dir__}}/brewalfred-#{ARGV.first}{.*,}"]
+command, = Dir["{#{taps},#{__dir__}}/brewalfred-#{args.first}{.*,}"]
 
 if command
-  ARGV.shift
-  command.end_with?(".rb") ? require(command) : exec(command, *ARGV)
+  args.shift
+  command.end_with?(".rb") ? require(command) : exec(command, *args)
 else
-  exec "brew", "cask", *ARGV
+  exec "brew", "cask", *args
 end
