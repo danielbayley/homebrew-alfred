@@ -2,9 +2,9 @@ cask "alfred-theme-dracula" do
   version "1.2.5"
   sha256 :no_check
 
-  # github.com/dracula/alfred/ was verified as official when first introduced to the cask
-  url "https://github.com/dracula/alfred/archive/master.zip"
-  appcast "https://github.com/dracula/alfred/releases.atom"
+  repo = "github.com/dracula/alfred/"
+  url "https://#{repo}archive/master.zip", verified: repo
+  appcast "https://#{repo}releases.atom"
   name "Dracula"
   desc "Dark theme for Alfred"
   homepage "https://draculatheme.com/alfred"

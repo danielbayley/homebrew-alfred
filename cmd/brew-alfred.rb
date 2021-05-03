@@ -3,7 +3,7 @@
 plist, = Dir["#{Dir.home}/Library/Preferences/com.*.Alfred-Preferences*.plist"]
 syncfolder = `/usr/bin/defaults read '#{plist}' syncfolder 2> /dev/null`
 
-syncfolder = if plist && !syncfolder.blank?
+syncfolder = if plist && syncfolder.present?
   File.expand_path syncfolder.chomp
 else
   "#{Dir.home}/Library/Application Support/Alfred"
