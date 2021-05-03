@@ -1,5 +1,5 @@
 cask "alfred-theme-simple-dark" do
-  version "tDwbJXihRl"
+  version "p0sqEZNzT0"
   sha256 :no_check
 
   preview = url "https://alfredapp.com/extras/theme/#{version}"

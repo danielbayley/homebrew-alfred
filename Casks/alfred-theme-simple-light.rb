@@ -1,7 +1,7 @@
 cask "alfred-theme-simple-light" do
   extend = CaskLoader.load token.sub "light", "dark"
 
-  version "V9h8Iyb9cJ"
+  version "wYHL5VH6EE"
   sha256 :no_check
 
   preview = url "https://alfredapp.com/extras/theme/#{version}"
