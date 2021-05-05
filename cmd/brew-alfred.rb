@@ -25,7 +25,7 @@ end
 
 ARGV[0] = "list" if ARGV.first == "ls"
 
-args = ARGV.shift, *ARGV.map(&method(:prefix))
+args = ARGV.first, *ARGV.drop(1).map(&method(:prefix))
 
 taps = Tap.cmd_directories.join ","
 command, = Dir["{#{taps},#{__dir__}}/brewalfred-#{args.first}{.*,}"]
@@ -34,5 +34,5 @@ if command
   args.shift
   command.end_with?(".rb") ? require(command) : exec(command, *args)
 else
-  exec "brew", "cask", *args
+  exec HOMEBREW_BREW_FILE, *args
 end
