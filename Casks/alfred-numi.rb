@@ -11,6 +11,7 @@ cask "alfred-numi" do
 
   depends_on cask: "alfred"
   depends_on cask: "numi"
+  depends_on formula: "php" if Hardware::CPU.arch == :arm64
 
   require_relative "../cmd/brew-alfred"
   artifact staged_path, target: "#{HOMEBREW_ALFRED_WORKFLOW_PREFIX}.#{token}"
