@@ -1,8 +1,8 @@
-_[Homebrew]_ + _[Alfred]_ <img src="logo.svg" width="8%" align="right">
-=======================================================================
-Manage [Alfred] with [Homebrew].
+<img src="logo.svg" width="16%" align="left">
 
-[Workflows] require the paid _[Powerpack]_ upgrade.
+_[Homebrew]_ + _[Alfred]_
+=========================
+Manage [Alfred] with [Homebrew]. [Workflows] require the paid _[Powerpack]_ upgrade.
 
 Install
 -------
