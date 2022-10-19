@@ -21,7 +21,11 @@ alfred "alfred-workflow", args: { "skip-cask-deps": true }
 
 [Contribute][guide]
 -------------------
-`git config core.hooksPath .github/hooks` and follow the contribution [guide], or copy and adapt an [existing] [_Cask_].
+~~~ sh
+brew tap danielbayley/pipeline
+git config core.hooksPath .github/hooks
+~~~
+and follow the contribution [guide], or copy and adapt an [existing] _[Cask]_.
 
 Because Alfred preferences can be [synced], the following Ruby code is necessary to install the workflow into the correct folder:
 ~~~ ruby
@@ -50,9 +54,9 @@ License
 [synced]:           https://alfredapp.com/help/advanced/sync
 
 [homebrew]:         https://brew.sh
-[_cask_]:           https://caskroom.github.io
+[cask]:             https://docs.brew.sh/Cask-Cookbook
 [`brew bundle`]:    https://docs.brew.sh/Manpage#bundle-subcommand
 [brewfile]:         https://github.com/Homebrew/homebrew-bundle#usage
 
-[guide]:            https://github.com/caskroom/homebrew-cask/blob/master/doc/development/adding_a_cask.md
+[guide]:            https://docs.brew.sh/Adding-Software-to-Homebrew#writing-the-cask
 [existing]:         Casks
