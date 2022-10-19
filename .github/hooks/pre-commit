@@ -1,8 +1,2 @@
-#! /bin/zsh --no-rcs --err-exit
-
-git config --get remote.origin.url | read
-: ${GITHUB_REPOSITORY_OWNER:=$REPLY:h:t}
-
-repo=https://raw.githubusercontent.com/$GITHUB_REPOSITORY_OWNER/homebrew-dotfiles
-
-curl --silent --location $repo/master/.github/hooks/pre-commit | zsh -s $@
+#! /bin/zsh --no-rcs
+brew pre-commit
